@@ -43,6 +43,23 @@ def get_country(filename, country):
     return(fname)
 
 
+def get_mean_price(filename):
+    """Compute the mean price of wines
+    Args:
+    -----
+    filename: str
+        Path to the filename containing the wine data
+    
+    Returns:
+    -----
+    mean_price: float
+        Mean price computed from the subset data
+    """  
+    wine = pd.read_csv(filename)
+    mean_price = wine['price'].mean()
+    return round(mean_price, 4)
+
+
 if __name__ == '__main__':
     filename = sys.argv[1]
     country = sys.argv[2]
